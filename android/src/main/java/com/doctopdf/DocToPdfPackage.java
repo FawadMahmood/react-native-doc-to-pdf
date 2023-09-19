@@ -17,7 +17,7 @@ public class DocToPdfPackage extends TurboReactPackage {
   @Override
   public NativeModule getModule(String name, ReactApplicationContext reactContext) {
     if (name.equals(DocToPdfModule.NAME)) {
-      return new DocToPdfModule(reactContext);
+      return (NativeModule) new DocToPdfModule(reactContext);
     } else {
       return null;
     }

@@ -7,6 +7,7 @@
 #import <React/RCTBridgeModule.h>
 
 @interface DocToPdf : NSObject <RCTBridgeModule>
+
 #endif
 
 @end

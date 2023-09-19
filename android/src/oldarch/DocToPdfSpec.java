@@ -9,5 +9,5 @@ abstract class DocToPdfSpec extends ReactContextBaseJavaModule {
     super(context);
   }
 
-  public abstract void multiply(double a, double b, Promise promise);
+  public abstract void generateThumbnail(String filePath, String fileType, Promise promise);
 }

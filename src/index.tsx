@@ -24,6 +24,9 @@ const DocToPdf = DocToPdfModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return DocToPdf.multiply(a, b);
+export function generateThumbnail(
+  filePath: string,
+  fileType: string
+): Promise<number> {
+  return DocToPdf.generateThumbnail(filePath, fileType);
 }

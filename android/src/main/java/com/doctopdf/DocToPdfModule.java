@@ -8,9 +8,12 @@ import com.facebook.react.bridge.ReactMethod;
 
 public class DocToPdfModule extends DocToPdfSpec {
   public static final String NAME = "DocToPdf";
+  ReactApplicationContext context;
+
 
   DocToPdfModule(ReactApplicationContext context) {
     super(context);
+    this.context = context;
   }
 
   @Override

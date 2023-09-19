@@ -23,7 +23,6 @@ import java.io.FileOutputStream;
 import java.util.UUID;
 
 import android.os.Environment;
-import android.util.Log;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -116,7 +115,7 @@ public class ExcelFileHandler {
       this.promise.resolve(imageFile.getAbsolutePath());
     }catch(Exception e){
       e.printStackTrace();
-      this.promise.resolve("error generating");
+      this.promise.reject("error generating pdf");
     }
   }
 
@@ -125,15 +124,8 @@ public class ExcelFileHandler {
     com.itextpdf.text.Font font = new com.itextpdf.text.Font();
     org.apache.poi.ss.usermodel.Font excelFont = workbook.getFontAt(cellStyle.getFontIndex());
     font.setSize(excelFont.getFontHeightInPoints());
-//    font.setColor(new BaseColor(excelFont.getColor()));
     font.setStyle(excelFont.getBold() ? com.itextpdf.text.Font.BOLD : com.itextpdf.text.Font.NORMAL);
     pdfCell.setPhrase(new Phrase(pdfCell.getPhrase().getContent(), font));
-
-    // Get background color
-//    Color backgroundColor = cellStyle.getFillBackgroundColorColor();
-//    if (backgroundColor != null) {
-//      pdfCell.setBackgroundColor(new BaseColor(backgroundColor.getRGB()));
-//    }
 
     // Get text alignment
     HorizontalAlignment alignment = HorizontalAlignment.LEFT;
